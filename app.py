@@ -1,5 +1,5 @@
 import streamlit as st
-from calculator import calculate_import_cost
+from function.calculation import *
 
 
 st.set_page_config(page_title="Import Calculator", layout="centered")
