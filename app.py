@@ -38,9 +38,9 @@ st.success("Access granted")
 # === FORM ===
 with st.form("calculator_form"):
     LCDPrice = st.number_input("Harga LCD (Yuan)", min_value=0.0)
-    Kurs = st.number_input("Yuan Converter", min_value=0.0)
+    Kurs = st.number_input("Yuan Converter ke Rupiah", min_value=0.0)
     Ship = st.selectbox("Ukuran Kapal", [20, 40])
-    Piece = st.number_input("Jumlah barang (pcs)", min_value=1)
+    Piece = st.number_input("Jumlah barang per kapal (pcs)", min_value=1)
     submitted = st.form_submit_button("Hitung")
 
 # === LOGIC & OUTPUT ===
@@ -48,7 +48,7 @@ if submitted:
     result = calculate_import_cost(
       lcd_price=LCDPrice, 
       kurs=Kurs, 
-      ship=Ship, 
+      ship_size=Ship, 
       piece=Piece
     )
 
